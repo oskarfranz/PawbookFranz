@@ -1,0 +1,62 @@
+<div>
+    <img src="https://www.fanaticosdelasmascotas.cl/wp-content/uploads/2021/12/mascotas_guia_regalos_navidad_shutterstock_Susan_Schmitz.jpg" class="imgTop">
+    <form [formGroup]="form" (submit)="sendData()">
+        <span *ngIf="form.value.role==='rescatista'">Rescatista</span>
+        <span *ngIf="form.value.role==='adoptador'">Adoptador</span>
+        <h3>REGISTER</h3>
+        <div>
+            <label>Sign up as<hr>
+            <input type="radio" value="adoptador" formControlName="role"/>Adoptador
+            <input type="radio" value="rescatista" formControlName="role"/>Rescatista
+            </label>
+        </div>
+        <div>
+            <label name="Name">Name: </label>
+            <input type="text" placeholder="Name" name="Name" formControlName="Name">
+        </div>
+        <div>
+            <label name="LastName">Last Name: </label>
+            <input type="text" placeholder="LastName" name="LastName" formControlName="LastName">
+        </div>
+        <div>
+            <label name="username">Username: </label>
+            <input type="text" placeholder="username" name="username" formControlName="username">
+        </div>
+        <div>
+            <label name="age">Age: </label>
+            <input type="number" placeholder="age" name="age" formControlName="age">
+        </div>
+        <div>
+            <label name="cellPhone">CellPhone: </label>
+            <input type="text" placeholder="cellPhone" name="cellPhone" formControlName="cellPhone">
+        </div>
+        <div>
+            <label name="email">Email: </label>
+            <input type="text" placeholder="email" name="email" formControlName="email">
+        </div>
+        <div>
+            <label name="password">Password: </label>
+            <input type="password" placeholder="password" name="password" formControlName="password">
+        </div>
+        <div>
+            <label name="passwordConfirmation">Password confirmation: </label>
+            <input type="password" placeholder="passwordConfirmation" name="passwordConfirmation" formControlName="confirm">
+        </div>
+        <div>
+            <button class="signup">SignUp</button>
+        </div>
+        <div>
+            <span class="invalid" *ngIf="invalidEmail"> The email address is already use</span>
+            <span class="invalid" *ngIf="form.errors && form.errors['passwordMisMatch']"> Password don't match</span>
+            <div>
+                <span class="valid" *ngIf="succesfullyAdd">User was succesfully registered...</span>
+            </div>
+            <div>
+                <span class="valid" *ngIf="succesfullyAdd">Please go to login</span>
+            </div>
+        </div>
+        <div class="haveAccount">
+            Have an account? <a routerLink="/login">LogIn</a>
+        </div>
+    </form>
+</div>

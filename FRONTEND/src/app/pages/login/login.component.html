@@ -1,0 +1,30 @@
+<div class="mainDiv">
+    <img class="imgTop" src="https://p4.wallpaperbetter.com/wallpaper/966/667/585/dogs-white-background-wall-wallpaper-preview.jpg">
+    <form (submit)="login()">
+        <h3>LOGIN</h3>
+        <div>
+            <label for="Email">Email: </label>
+            <input type="text" [(ngModel)]="credentials.email" name="Email" placeholder="Email">
+        </div>
+        <div>
+            <label for="password">Password: </label>
+            <input type="text" [(ngModel)]="credentials.password" name="password" placeholder="Password">
+        </div>
+        <div>
+            <button class="login">LogIn</button>
+        </div>
+        <div class="invalidField">
+            <span *ngIf="flagUnauthorized">Password or email invalid</span>
+        </div>
+        <div class="incompleteFields">
+            <span *ngIf="flagBadLogin">
+                <img class="imgWarning" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Antu_dialog-warning.svg/1200px-Antu_dialog-warning.svg.png">
+                <br>Campos incompletos
+            </span>
+        </div>
+        <div>
+            Don't have an account? 
+            <a routerLink = "/signup">Sign up here!</a> 
+        </div>
+    </form>
+</div>
