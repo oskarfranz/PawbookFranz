@@ -43,5 +43,14 @@ Database.connect().then((client) =>{
     const server = app.listen(port, ()=>{
         console.log('App is running in port '+port+'...');
     });
+
+    const io = socketIo(server, {
+        cors: {
+            origin: 'http://localhost:4200',
+            methods: ['GET', 'POST', 'PUT', 'DELETE'],
+            allowHeaders: ['Authorization'],
+            credentials: true
+        }
+    });
     
 });
