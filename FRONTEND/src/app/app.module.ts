@@ -24,6 +24,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
+import { PetComponent } from './pages/pet/pet.component';
 
 
 
@@ -38,7 +39,8 @@ import {MatInputModule} from '@angular/material/input';
     UsersComponent,
     PostsComponent,
     HomeComponent,
-    PetsComponent
+    PetsComponent,
+    PetComponent
   ],
   imports: [
     BrowserModule,

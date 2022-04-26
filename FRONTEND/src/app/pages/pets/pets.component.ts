@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pets',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetsComponent implements OnInit {
   razaSelected: boolean = false;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  moreInfo(){
+    this.router.navigate(['/pet']);
   }
 
 

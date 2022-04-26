@@ -1,0 +1,45 @@
+.topDiv{
+    height: 250px;
+}
+.imgDog{
+    align-self: center;
+    position: absolute;
+    width: 35vh;
+    left: 35%;
+}
+.bottomDiv{
+    height: 400px;
+    background-color: lightgray;
+    margin: 30px;
+    padding-left: 5%;
+}
+h1, h3{
+    font-family: Optima, sans-serif;
+    letter-spacing: 1px;
+    font-size: 2em;
+    position: absolute;
+    left: 55%;
+    top: 30%
+}
+h3{
+    font-family: Optima, sans-serif;
+    letter-spacing: 1px;
+    font-size: 2em;
+    position: absolute;
+    left: 60%;
+    top: 35%
+}
+mat-card{
+    width: 18%;
+    height: 25%;
+    margin: 15px;
+    text-align: center;
+    box-shadow: none !important;
+    display: inline-block;
+    font-family: Optima, sans-serif;
+    letter-spacing: 1px;
+}
+.blankDiv{
+    height: 15%;
+    background-color: lightgray;
+}
