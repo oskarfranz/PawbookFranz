@@ -8,6 +8,8 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class AppComponent {
 
+  title = 'MY_APP';
+  
   constructor() {
   }
 
