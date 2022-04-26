@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PetService } from 'src/app/shared/services/pet.service';
+import { Pet } from '../../shared/interfaces/pet';
 
 @Component({
   selector: 'app-pets',
@@ -8,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class PetsComponent implements OnInit {
   razaSelected: boolean = false;
-  constructor(private router: Router) { }
+  private petService;
+  pets: Pet[] = [];
+
+  constructor(private router: Router, petService: PetService) {
+    this.petService = petService;
+  }
 
   ngOnInit(): void {
+    this.petService.getPets().subscribe(response => {
+      console.log('Response: ', response);
+      this.pets = response;
+    })
   }
   moreInfo(){
     this.router.navigate(['/pet']);

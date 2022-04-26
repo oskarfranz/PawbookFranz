@@ -23,7 +23,17 @@
     </mat-drawer>
     <mat-drawer-content>
         <div class="mainDiv">
-            <mat-card>
+            <mat-card *ngFor="let pet of pets">
+                <img src="{{pet.image}}" class="imgDog">
+                <mat-card-title><br>{{pet.name}}</mat-card-title>
+                <mat-card-subtitle>{{pet.raza}}</mat-card-subtitle>
+                <mat-card-actions>
+                    <button mat-fab class="moreInfo" (click)="moreInfo()">
+                        <mat-icon>info</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+            <!-- <mat-card>
                 <img src="https://misanimales.com/wp-content/uploads/2021/07/golden-retriever-valla-640x853.jpg" class="imgDog">
                 <mat-card-title><br>JACK</mat-card-title>
                 <mat-card-subtitle>Golden Retriever</mat-card-subtitle>
@@ -82,7 +92,7 @@
                         <mat-icon>info</mat-icon>
                     </button>
                 </mat-card-actions>
-            </mat-card>
+            </mat-card> -->
         </div>
     </mat-drawer-content>
   </mat-drawer-container>

@@ -13,6 +13,7 @@ const cors = require('cors');
 //incializamos app
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 app.use('/api', apiRoutes);
 
 app.get('/', (req, res) => {
