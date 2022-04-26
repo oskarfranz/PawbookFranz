@@ -1,5 +1,81 @@
-p{
-    margin: 10p;
+.mainDiv{
+    text-align: center;
+    font-family: Optima, sans-serif;
+    letter-spacing: 1px;
+}
+.introText{
+    margin-left: 12.5%;
+    text-align: justify;
+    width: 70%;
+}
+.introText > h1{
+    text-align: center;
+}
+.grayDiv{
+    background-color: rgb(34, 34, 34);
+    margin: 20px;
+    height: 400px;
+    color: lightgray;
+}
+
+.imageDiv{
+    width: 40%;
+    height: 200px;
+    position: absolute;
     margin-left: 30%;
-    font-size: 1.5em;
+    margin-top: -160px;
+}
+.imageDiv > img{
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.blankDiv{
+    height: 160px;
+}
+.secondDiv{
+    margin: 20px;
+    text-align: left;
+    font-family: Optima, sans-serif;
+    h1{
+        font-family: Optima, sans-serif;
+        letter-spacing: 1px;
+    }
+}
+.gallery1, .gallery2, .gallery3{
+    width: 31%;
+    height: 300px;
+    display: inline-block;
+    color: white;
+    margin: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.imgGallery{
+    height: 80px;
+    padding: 5px;
+}
+.gallery1{
+    background-color: rgb(34, 34, 34);
+    text-align: center;
+    hr{
+        width: 30%;
+    }
+}
+
+.gallery2{
+    background-color: rgb(32, 165, 161);
+    // background-color: #ffda5f;
+    // background-color: rgb(163, 162, 162);
+    text-align: center;
+    hr{
+        width: 30%;
+    }
+}
+
+.gallery3{
+    background-color: rgb(24, 122, 118);
+    text-align: center;
+    hr{
+        width: 30%;
+    }
 }

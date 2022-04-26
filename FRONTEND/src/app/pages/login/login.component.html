@@ -1,14 +1,20 @@
 <div class="mainDiv">
     <img class="imgTop" src="https://p4.wallpaperbetter.com/wallpaper/966/667/585/dogs-white-background-wall-wallpaper-preview.jpg">
     <form (submit)="login()">
-        <h3>LOGIN</h3>
+        <h2>LOGIN</h2>
         <div>
-            <label for="Email">Email: </label>
-            <input type="text" [(ngModel)]="credentials.email" name="Email" placeholder="Email">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" [(ngModel)]="credentials.email" name="Email" placeholder="pat@example.com">
+                <mat-icon matSuffix>mail</mat-icon>
+            </mat-form-field>
         </div>
         <div>
-            <label for="password">Password: </label>
-            <input type="text" [(ngModel)]="credentials.password" name="password" placeholder="Password">
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="text" [(ngModel)]="credentials.password" name="password" placeholder="Password">
+                <mat-icon matSuffix>password</mat-icon>
+            </mat-form-field>
         </div>
         <div>
             <button class="login">LogIn</button>

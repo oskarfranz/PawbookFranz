@@ -1,46 +1,87 @@
 <div>
+    <h2>SIGNUP</h2>
     <img src="https://www.fanaticosdelasmascotas.cl/wp-content/uploads/2021/12/mascotas_guia_regalos_navidad_shutterstock_Susan_Schmitz.jpg" class="imgTop">
     <form [formGroup]="form" (submit)="sendData()">
-        <span *ngIf="form.value.role==='rescatista'">Rescatista</span>
-        <span *ngIf="form.value.role==='adoptador'">Adoptador</span>
-        <h3>REGISTER</h3>
         <div>
-            <label>Sign up as<hr>
+            <label>
             <input type="radio" value="adoptador" formControlName="role"/>Adoptador
             <input type="radio" value="rescatista" formControlName="role"/>Rescatista
             </label>
         </div>
         <div>
-            <label name="Name">Name: </label>
-            <input type="text" placeholder="Name" name="Name" formControlName="Name">
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" placeholder="Name" name="Name" formControlName="Name">
+                <mat-icon matSuffix>person_pin</mat-icon>
+                <mat-error>Name is a required field</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>LastName</mat-label>
+                <mat-icon matSuffix>person_pin</mat-icon>
+                <input matInput type="text" placeholder="LastName" name="LastName" formControlName="LastName">
+                <mat-error>LastName is a required field</mat-error>
+            </mat-form-field>
         </div>
         <div>
-            <label name="LastName">Last Name: </label>
-            <input type="text" placeholder="LastName" name="LastName" formControlName="LastName">
+            <mat-form-field appearance="fill">
+                <mat-label>Username</mat-label>
+                <mat-icon matSuffix>supervisor_account</mat-icon>
+                <input matInput type="text" placeholder="username" name="username" formControlName="username">
+                <mat-error>Username is a required field</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Age</mat-label>
+                <mat-icon matSuffix> format_list_numbered_rtl</mat-icon>
+                <input matInput type="number" placeholder="age" name="age" formControlName="age">
+            </mat-form-field>
         </div>
         <div>
-            <label name="username">Username: </label>
-            <input type="text" placeholder="username" name="username" formControlName="username">
+            <mat-form-field appearance="fill">
+                <mat-label>CellPhone</mat-label>
+                <mat-icon matSuffix>settings_cell</mat-icon>
+                <input matInput type="text" placeholder="cellPhone" name="cellPhone" formControlName="cellPhone">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <mat-icon matSuffix>email</mat-icon>
+                <input matInput type="text" placeholder="email" name="email" formControlName="email">
+            </mat-form-field>
         </div>
         <div>
-            <label name="age">Age: </label>
-            <input type="number" placeholder="age" name="age" formControlName="age">
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <mat-icon matSuffix>password</mat-icon>
+                <input matInput type="password" placeholder="password" name="password" formControlName="password">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Password confirmation</mat-label>
+                <mat-icon matSuffix>password</mat-icon>
+                <input matInput type="password" placeholder="passwordConfirmation" name="passwordConfirmation" formControlName="confirm">
+            </mat-form-field>
         </div>
         <div>
-            <label name="cellPhone">CellPhone: </label>
-            <input type="text" placeholder="cellPhone" name="cellPhone" formControlName="cellPhone">
+            <mat-form-field appearance="fill" *ngIf="form.value.role==='rescatista'">
+                <mat-label>Ocupation</mat-label>
+                <mat-icon matSuffix>folder_shared</mat-icon>
+                <input matInput type="text" placeholder="Ocupation" name="Ocupation" formControlName="Ocupation">
+            </mat-form-field>
+            <mat-form-field appearance="fill" *ngIf="form.value.role==='rescatista'">
+                <mat-label>Organization</mat-label>
+                <mat-icon matSuffix>bookmark</mat-icon>
+                <input matInput type="text" placeholder="Organization" name="Organization" formControlName="Organization">
+            </mat-form-field>
         </div>
         <div>
-            <label name="email">Email: </label>
-            <input type="text" placeholder="email" name="email" formControlName="email">
-        </div>
-        <div>
-            <label name="password">Password: </label>
-            <input type="password" placeholder="password" name="password" formControlName="password">
-        </div>
-        <div>
-            <label name="passwordConfirmation">Password confirmation: </label>
-            <input type="password" placeholder="passwordConfirmation" name="passwordConfirmation" formControlName="confirm">
+            <mat-form-field appearance="fill" *ngIf="form.value.role==='adoptador'">
+                <mat-label>Ocupation</mat-label>
+                <mat-icon matSuffix>folder_shared</mat-icon>
+                <input matInput type="text" placeholder="Ocupation" name="Ocupation" formControlName="Ocupation">
+            </mat-form-field>
+            <mat-form-field appearance="fill" *ngIf="form.value.role==='adoptador'">
+                <mat-label>Location</mat-label>
+                <mat-icon matSuffix> location_on</mat-icon>
+                <input matInput type="text" placeholder="Location" name="Location" formControlName="Location">
+            </mat-form-field>
         </div>
         <div>
             <button class="signup">SignUp</button>

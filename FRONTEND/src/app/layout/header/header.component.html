@@ -1,4 +1,14 @@
-<div>
-    <h1>Paw Book</h1>
-    <button class="cerrarSesion" (click)="logout()">X</button>
-</div>
+<p>
+    <mat-toolbar>
+    <button (click)="home()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
+    </button>
+    <button (click)="pets()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>pets</mat-icon>
+    </button>
+    <span>PawBook</span>
+   <button mat-fab color="warn" class="cerrarSesion" (click)="logout()">
+       <mat-icon>exit_to_app</mat-icon>
+   </button>
+  </mat-toolbar>
+  </p>

@@ -31,7 +31,11 @@ export class SignupComponent implements OnInit {
       'email' : ['', [Validators.required, Validators.email]], //si quereos mas de una valid van entre []
       'password' : ['', [Validators.required, Validators.minLength(8)]],
       'confirm': ['', [Validators.required, Validators.minLength(8)]],
-      'role': ['', Validators.required]
+      'role': ['', Validators.required],
+      'Ocupation': [''],
+      'Organization': [''],
+      'Location': ['']
+
     },{
       validators: this.matchPassword.bind(this) //necesitamos pasarle el mismo contexto
     })

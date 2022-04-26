@@ -20,4 +20,11 @@ export class HeaderComponent implements OnInit {
     this.authService.remove(); //quitamos token
     this.router.navigate(['/login']); //redirigimos a login
   };
+
+  home(){
+    this.router.navigate(['/home']);
+  }
+  pets(){
+    this.router.navigate(['/pets']);
+  }
 }
