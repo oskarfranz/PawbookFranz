@@ -25,6 +25,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import { PetComponent } from './pages/pet/pet.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 
 
@@ -56,7 +58,8 @@ import { PetComponent } from './pages/pet/pet.component';
     MatSidenavModule,
     MatCheckboxModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
