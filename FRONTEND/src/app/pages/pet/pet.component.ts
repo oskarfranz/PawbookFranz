@@ -26,4 +26,8 @@ export class PetComponent implements OnInit {
     })
   }
 
+  send(){
+    console.log("click");
+  }
+
 }

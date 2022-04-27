@@ -21,19 +21,19 @@
             <mat-card-subtitle>{{pets.location}}</mat-card-subtitle>
         </mat-card>
         <mat-card>
-            <mat-icon>phone</mat-icon>
-            <mat-card-title>Contacto</mat-card-title>
-            <mat-card-subtitle>332537550</mat-card-subtitle>
+            <mat-icon>calendar_today</mat-icon>
+            <mat-card-title>Dia de Rescate</mat-card-title>
+            <mat-card-subtitle>{{pets.rescuedDate}}</mat-card-subtitle>
         </mat-card>
         <mat-card>
             <mat-icon>pets</mat-icon>
             <mat-card-title>Tamaño</mat-card-title>
             <mat-card-subtitle>{{pets.size}}</mat-card-subtitle>
         </mat-card>
-        <mat-card>
-            <mat-icon>calendar_today</mat-icon>
-            <mat-card-title>Dia de Rescate</mat-card-title>
-            <mat-card-subtitle>{{pets.rescuedDate}}</mat-card-subtitle>
+        <mat-card class="sendApplication" (click)="send()">
+            <mat-icon>done_all</mat-icon>
+            <mat-card-title>Apply</mat-card-title>
+            <mat-card-subtitle>Send Application</mat-card-subtitle>
         </mat-card>
         <mat-card>
             <mat-icon>pets</mat-icon>
