@@ -49,7 +49,7 @@ Database.connect().then((client) =>{
         cors: {
             origin: 'http://localhost:4200',
             methods: ['GET', 'POST', 'PUT', 'DELETE'],
-            allowHeaders: ['Authorization'],
+            allowHeaders: ['*'],
             credentials: true
         }
     });

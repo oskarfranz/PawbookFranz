@@ -27,7 +27,7 @@ import {MatInputModule} from '@angular/material/input';
 import { PetComponent } from './pages/pet/pet.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
-
+// import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 
 
 @NgModule({

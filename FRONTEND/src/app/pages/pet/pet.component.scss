@@ -36,4 +36,6 @@ mat-card{
 .sendApplication:hover{
     background-color: rgb(134, 235, 230) !important;
     cursor: pointer;
+    box-shadow: 0px 15px 20px rgb(24, 122, 118);
+    transform: translateY(-7px);
 }

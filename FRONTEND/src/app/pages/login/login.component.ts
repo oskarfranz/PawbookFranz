@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     }
     this.loginService.login(this.credentials).subscribe(response =>{
       console.log(response);
-      this.authService.save(response.token),
+      this.authService.save(response),
       this.router.navigate(['/home']);
     }, error=>{
       console.log(error.status);
@@ -60,7 +60,6 @@ export class LoginComponent implements OnInit {
       console.log('Response: ', response);
       this.token = response;
     })
-    // localStorage.setItem('credentials');
   }
 
 }

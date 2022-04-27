@@ -49,11 +49,23 @@ router.get('/:id', userController.getById);
  *             properties:
  *               name:
  *                 type: string
+ *               lastname:
+ *                 type: string
+ *               username:
+ *                 type: string
  *               age:
  *                 type: integer
+ *               cellphone:
+ *                 type: string
  *               email:
  *                 type: string
  *               password:
+ *                 type: string
+ *               ocupation:
+ *                 type: string
+ *               location:
+ *                 type: string
+ *               organization:
  *                 type: string
  *       responses: 
  *         200:
