@@ -5,17 +5,17 @@
         <mat-selection-list #filters>
             <h3>Raza</h3>
             <!-- <mat-list-option #raza>Raza {{raza.selected}}</mat-list-option> -->
-            <mat-list-option>Chico</mat-list-option>
-            <mat-list-option>Mediano</mat-list-option>
-            <mat-list-option>Grande</mat-list-option>
+            <mat-list-option (click)="addFilter('Chico')">Chico</mat-list-option>
+            <mat-list-option (click)="addFilter('Mediano')">Mediano</mat-list-option>
+            <mat-list-option (click)="addFilter('Grande')">Grande</mat-list-option>
             <h3>Especie</h3>
-            <mat-list-option>Perros</mat-list-option>
-            <mat-list-option>Gatos</mat-list-option>
+            <mat-list-option (click)="addFilter('dog')">Perros</mat-list-option>
+            <mat-list-option (click)="addFilter('cat')">Gatos</mat-list-option>
             <h3>Edad</h3>
-            <mat-list-option>0 - 2 años</mat-list-option>
-            <mat-list-option>3 - 6 años</mat-list-option>
-            <mat-list-option>6 - 9 años</mat-list-option>
-            <mat-list-option>9 +</mat-list-option>
+            <mat-list-option (click)="addFilter('0-2')">0 - 2 años</mat-list-option>
+            <mat-list-option (click)="addFilter('3-6')">3 - 6 años</mat-list-option>
+            <mat-list-option (click)="addFilter('6-9')">6 - 9 años</mat-list-option>
+            <mat-list-option (click)="addFilter('9+')">9 +</mat-list-option>
           </mat-selection-list>
           <p>
             #Selected: {{filters.selectedOptions.selected.length}}
