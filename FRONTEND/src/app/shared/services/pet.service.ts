@@ -15,4 +15,8 @@ export class PetService {
     const url = environment.socketUrl+'/api/pets';
     return this.httpClient.get(url); //get pets
   }
+  getPetById(idPet: any): Observable<any>{
+    const url = environment.socketUrl+'/api/pets/'+idPet;
+    return this.httpClient.get(url); //pet with Id
+  }
 }

@@ -26,8 +26,9 @@ export class PetsComponent implements OnInit {
       this.allPets = this.pets;
     })
   }
-  moreInfo(){
+  moreInfo(idPet: any){
     this.router.navigate(['/pet']);
+    localStorage.setItem('idPet', idPet);
   }
 
   addFilter(filter: String){

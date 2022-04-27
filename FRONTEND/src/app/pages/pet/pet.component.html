@@ -1,15 +1,14 @@
-<div>
+<div *ngFor="let pets of pet">
     <div class="topDiv">
-        <h1>JACK</h1>
-        <h3>Golden</h3>
-        <img src="https://misanimales.com/wp-content/uploads/2021/07/golden-retriever-valla-640x853.jpg" class="imgDog">
+        <img src="{{pets.image}}" class="imgDog">
     </div>
     <div class="bottomDiv">
         <div class="blankDiv"></div>
+        <h1>{{pets.name}}</h1>
         <mat-card>
             <mat-icon>location_on</mat-icon>
             <mat-card-title>Age</mat-card-title>
-            <mat-card-subtitle>5 años</mat-card-subtitle>
+            <mat-card-subtitle>{{pets.age}}</mat-card-subtitle>
         </mat-card>
         <mat-card>
             <mat-icon>gender</mat-icon>
@@ -19,7 +18,7 @@
         <mat-card>
             <mat-icon>location_on</mat-icon>
             <mat-card-title>Ubicación</mat-card-title>
-            <mat-card-subtitle>Guadalajara, Jalisco</mat-card-subtitle>
+            <mat-card-subtitle>{{pets.location}}</mat-card-subtitle>
         </mat-card>
         <mat-card>
             <mat-icon>phone</mat-icon>
@@ -27,19 +26,19 @@
             <mat-card-subtitle>332537550</mat-card-subtitle>
         </mat-card>
         <mat-card>
-            <mat-icon>location_on</mat-icon>
-            <mat-card-title>Title</mat-card-title>
-            <mat-card-subtitle>Info</mat-card-subtitle>
+            <mat-icon>pets</mat-icon>
+            <mat-card-title>Tamaño</mat-card-title>
+            <mat-card-subtitle>{{pets.size}}</mat-card-subtitle>
         </mat-card>
         <mat-card>
-            <mat-icon>location_on</mat-icon>
-            <mat-card-title>Title</mat-card-title>
-            <mat-card-subtitle>Info</mat-card-subtitle>
+            <mat-icon>calendar_today</mat-icon>
+            <mat-card-title>Dia de Rescate</mat-card-title>
+            <mat-card-subtitle>{{pets.rescuedDate}}</mat-card-subtitle>
         </mat-card>
         <mat-card>
-            <mat-icon>location_on</mat-icon>
-            <mat-card-title>Title</mat-card-title>
-            <mat-card-subtitle>Info</mat-card-subtitle>
+            <mat-icon>pets</mat-icon>
+            <mat-card-title>Raza</mat-card-title>
+            <mat-card-subtitle>{{pets.raza}}</mat-card-subtitle>
         </mat-card>
     </div>
 </div>

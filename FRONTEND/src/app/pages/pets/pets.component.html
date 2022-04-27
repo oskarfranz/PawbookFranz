@@ -28,71 +28,11 @@
                 <mat-card-title><br>{{pet.name}}</mat-card-title>
                 <mat-card-subtitle>{{pet.raza}}</mat-card-subtitle>
                 <mat-card-actions>
-                    <button mat-fab class="moreInfo" (click)="moreInfo()">
+                    <button mat-fab class="moreInfo" (click)="moreInfo(pet._id)">
                         <mat-icon>info</mat-icon>
                     </button>
                 </mat-card-actions>
             </mat-card>
-            <!-- <mat-card>
-                <img src="https://misanimales.com/wp-content/uploads/2021/07/golden-retriever-valla-640x853.jpg" class="imgDog">
-                <mat-card-title><br>JACK</mat-card-title>
-                <mat-card-subtitle>Golden Retriever</mat-card-subtitle>
-                <mat-card-actions>
-                    <button mat-fab class="moreInfo" (click)="moreInfo()">
-                        <mat-icon>info</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card>
-                <img src="https://t2.uc.ltmcdn.com/es/posts/0/0/3/como_cuidar_a_un_chihuahua_40300_paso_1_600.jpg" class="imgDog">
-                <mat-card-title><br>PONKER</mat-card-title>
-                <mat-card-subtitle>Chihuahua</mat-card-subtitle>
-                <mat-card-actions>
-                    <button mat-fab class="moreInfo">
-                        <mat-icon>info</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card>
-                <img src="https://media.istockphoto.com/photos/blue-brindle-and-white-pit-bull-terrier-mixed-breed-dog-listening-a-picture-id1246559733?k=20&m=1246559733&s=612x612&w=0&h=JSBDVRA3ZIReXfywmkVrrqvjeoeiqrCF_mitfrg2-j0=" class="imgDog">
-                <mat-card-title><br>Rex</mat-card-title>
-                <mat-card-subtitle>Pitbull</mat-card-subtitle>
-                <mat-card-actions>
-                    <button mat-fab class="moreInfo">
-                        <mat-icon>info</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card>
-                <img src="https://t2.uc.ltmcdn.com/es/posts/8/3/6/como_saber_si_un_border_collie_es_puro_44638_600_square.jpg" class="imgDog">
-                <mat-card-title><br>Tawson</mat-card-title>
-                <mat-card-subtitle>Border Collie</mat-card-subtitle>
-                <mat-card-actions>
-                    <button mat-fab class="moreInfo">
-                        <mat-icon>info</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card>
-                <img src="http://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg" class="imgDog">
-                <mat-card-title><br>Rita</mat-card-title>
-                <mat-card-subtitle>Pug</mat-card-subtitle>
-                <mat-card-actions>
-                    <button mat-fab class="moreInfo">
-                        <mat-icon>info</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card>
-                <img src="https://blog.mascotaysalud.com/wp-content/uploads/2019/05/san-bernardo.jpg" class="imgDog">
-                <mat-card-title><br>Lia</mat-card-title>
-                <mat-card-subtitle>San Bernardo</mat-card-subtitle>
-                <mat-card-actions>
-                    <button mat-fab class="moreInfo">
-                        <mat-icon>info</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card> -->
         </div>
     </mat-drawer-content>
   </mat-drawer-container>

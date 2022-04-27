@@ -4,7 +4,7 @@
 .imgDog{
     align-self: center;
     position: absolute;
-    width: 35vh;
+    width: 55vh;
     left: 35%;
 }
 .bottomDiv{
@@ -12,22 +12,12 @@
     background-color: lightgray;
     margin: 30px;
     padding-left: 5%;
+    text-align: center;
 }
-h1, h3{
+h1{
     font-family: Optima, sans-serif;
     letter-spacing: 1px;
     font-size: 2em;
-    position: absolute;
-    left: 55%;
-    top: 30%
-}
-h3{
-    font-family: Optima, sans-serif;
-    letter-spacing: 1px;
-    font-size: 2em;
-    position: absolute;
-    left: 60%;
-    top: 35%
 }
 mat-card{
     width: 18%;
@@ -40,6 +30,6 @@ mat-card{
     letter-spacing: 1px;
 }
 .blankDiv{
-    height: 15%;
+    height: 7%;
     background-color: lightgray;
 }

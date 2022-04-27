@@ -1,10 +1,10 @@
 export interface Pet {
-    id?: string,
+    _id?: string,
     age: Number,
     name: string,
     image: string,
     location: string,
     raza: string, 
-    rescuedDate: number,
+    rescuedDate: string,
     size: string
 }
