@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PetService } from 'src/app/shared/services/pet.service';
 import { Router } from '@angular/router';
 import { Pet } from 'src/app/shared/interfaces/pet';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-applications',
@@ -12,7 +13,7 @@ import {MatDialog} from '@angular/material/dialog';
 export class ApplicationsComponent implements OnInit {
   pets: Pet[] = [];
 
-  constructor(private router: Router, private petService: PetService, public dialog: MatDialog) { }
+  constructor(private router: Router, private petService: PetService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.petService.getPets().subscribe(response =>{
@@ -23,8 +24,13 @@ export class ApplicationsComponent implements OnInit {
   viewApplications(idPet: any, name: any){
     console.log(idPet, name);
     this.petService.getPetById(idPet).subscribe(response =>{
-      console.log(response[0].applications);
+      var applications = response[0].applications;
+      console.log(applications);
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = true;
+      dialogConfig.data = applications; //pasamos las solicitudes
+      this.dialog.open(ModalComponent, dialogConfig);
     });
-    // this.dialog.open(ModalComponent);
   }
 }
