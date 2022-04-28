@@ -2,13 +2,12 @@
     height: 250px;
 }
 .imgDog{
-    align-self: center;
     position: absolute;
     width: 55vh;
     left: 35%;
 }
 .bottomDiv{
-    height: 400px;
+    // height: 400px;
     background-color: lightgray;
     margin: 30px;
     padding-left: 5%;
@@ -34,8 +33,8 @@ mat-card{
     background-color: lightgray;
 }
 .sendApplication:hover{
-    background-color: rgb(134, 235, 230) !important;
     cursor: pointer;
-    box-shadow: 0px 15px 20px rgb(24, 122, 118);
+    box-shadow: 0px 15px 20px black;
+    background-color: rgb(61, 190, 190);
     transform: translateY(-7px);
 }

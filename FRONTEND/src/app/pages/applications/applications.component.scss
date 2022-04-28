@@ -1,0 +1,26 @@
+div{
+    margin: 50px;
+    background-color: lightgray;
+    font-family: Optima, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+}
+h1{
+    font-family: Optima, sans-serif;
+    letter-spacing: 1px;
+    padding: 10px;
+}
+mat-card{
+    margin: 30px;
+    padding: 30px;
+    display: inline-block;
+    text-align: center;
+    font-family: Optima, sans-serif;
+    letter-spacing: 1px;
+}
+.Solicitudes{
+    display: none;
+    background-color: green;
+    height: 100px;
+    opacity: .3;
+}

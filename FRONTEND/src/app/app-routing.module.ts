@@ -10,6 +10,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
 import { HomeComponent } from './pages/home/home.component';
 import { PetsComponent } from './pages/pets/pets.component';
 import { PetComponent } from './pages/pet/pet.component';
+import { ApplicationsComponent } from './pages/applications/applications.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'}, //ya me redirije a login
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'pets', component: PetsComponent},
   { path: 'pet', component: PetComponent},
   { path: 'home', component: HomeComponent},
+  { path: 'applications', component: ApplicationsComponent},
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
   { path: '404', component: NotFoundComponent},
   { path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},

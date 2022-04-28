@@ -26,6 +26,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import { PetComponent } from './pages/pet/pet.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { ApplicationsComponent } from './pages/applications/applications.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 // import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 
@@ -42,7 +44,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     PostsComponent,
     HomeComponent,
     PetsComponent,
-    PetComponent
+    PetComponent,
+    ApplicationsComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatCheckboxModule,
     MatListModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

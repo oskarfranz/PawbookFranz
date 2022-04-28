@@ -1,0 +1,17 @@
+<div>
+    <h1>Solicitudes</h1>
+    <mat-card *ngFor="let pet of pets">
+        <mat-card-header>
+          <mat-card-title>{{pet.name}}</mat-card-title>
+          <mat-card-subtitle>{{pet.raza}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-xl-image src="{{pet.image}}" alt="Photo of pet">
+        <mat-card-actions>
+          <button mat-button>EDIT</button>
+          <button mat-button (click)="viewApplications(pet._id, pet.name)">VIEW</button>
+        </mat-card-actions>
+    </mat-card>
+    <div class="Solicitudes">
+        <h3>Solicitudes</h3>
+    </div>
+</div>

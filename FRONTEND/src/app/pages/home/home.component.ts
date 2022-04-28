@@ -16,6 +16,9 @@ export class HomeComponent implements OnInit {
   mascotas(){
     this.router.navigate(['/pets']);
   }
+  solicitudes(){
+    this.router.navigate(['/applications']);
+  }
 
 
 }
