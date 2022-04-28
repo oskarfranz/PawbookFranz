@@ -33,4 +33,9 @@ export class ApplicationsComponent implements OnInit {
       this.dialog.open(ModalComponent, dialogConfig);
     });
   }
+  edit(){
+    // this.userService.getUserById('6269c14a276d3b0d8416b472').subscribe(response =>{
+    //   console.log(response);
+    // })
+  }
 }

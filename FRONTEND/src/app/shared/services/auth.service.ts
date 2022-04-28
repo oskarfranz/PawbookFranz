@@ -7,8 +7,9 @@ export class AuthService {
 
   constructor() { }
 
-  save(token: string){
+  save(token: string, email: string){
     localStorage.setItem('token', token);
+    localStorage.setItem('userEmail', email);
   }
 
   get(): string{
@@ -21,6 +22,7 @@ export class AuthService {
 
   remove(): void{
     console.log("pass");
-    localStorage.removeItem('token'); //cerramos sesion
+    localStorage.removeItem('token');
+    localStorage.removeItem('userEmail');//cerramos sesion
   }
 }

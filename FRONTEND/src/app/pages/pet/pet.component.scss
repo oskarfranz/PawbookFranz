@@ -1,16 +1,16 @@
-.topDiv{
-    height: 250px;
+.top{
+    width: 40%;
+    margin-left: 30%;
 }
-.imgDog{
-    position: absolute;
-    width: 55vh;
-    left: 35%;
+.img{
+    width: 100%;
+    border-radius: 5%;
+    box-shadow: 10px 10px 5px rgb(148, 148, 148);
 }
 .bottomDiv{
-    // height: 400px;
     background-color: lightgray;
-    margin: 30px;
     padding-left: 5%;
+    margin-top: -10px;
     text-align: center;
 }
 h1{
@@ -27,10 +27,6 @@ mat-card{
     display: inline-block;
     font-family: Optima, sans-serif;
     letter-spacing: 1px;
-}
-.blankDiv{
-    height: 7%;
-    background-color: lightgray;
 }
 .sendApplication:hover{
     cursor: pointer;

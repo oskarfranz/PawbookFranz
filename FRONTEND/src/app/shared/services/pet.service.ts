@@ -19,4 +19,8 @@ export class PetService {
     const url = environment.socketUrl+'/api/pets/'+idPet;
     return this.httpClient.get(url); //pet with Id
   }
+  updatePet(idPet: any, body: any): Observable<any>{
+    const url = environment.socketUrl+'/api/pets/'+idPet;
+    return this.httpClient.put(url, body, { responseType: 'text' }); //update pet with Id
+  }
 }

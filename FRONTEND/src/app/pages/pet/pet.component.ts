@@ -27,8 +27,15 @@ export class PetComponent implements OnInit {
   }
 
   send(){
-    console.log("click");
-    let userEmail = 'sofiarceo@gmail.com';
+    let userEmail = localStorage.getItem('userEmail') || '';
+    const body : string[] = [];
+    body.push(userEmail);
+    this.pet[0].applications.forEach(element => {
+      body.push(element);
+    });
+    const bodyRequest = { applications: body};
+    this.petService.updatePet(this.idPet, bodyRequest).subscribe(response => {
+      console.log('Response: ', response);
+    })
   }
-
 }

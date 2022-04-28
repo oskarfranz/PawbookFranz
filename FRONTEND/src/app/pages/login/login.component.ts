@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     }
     this.loginService.login(this.credentials).subscribe(response =>{
       console.log(response);
-      this.authService.save(response),
+      this.authService.save(response, this.credentials.email),
       this.router.navigate(['/home']);
     }, error=>{
       console.log(error.status);
