@@ -1,1 +1,23 @@
-<p>posts works!</p>
+<div>
+    <h2>Users</h2>
+    <table *ngIf="users.length">
+        <tr>
+            <th>Name</th>
+            <!-- <th>LastName</th> -->
+            <th>Email</th>
+            <th>Username</th>
+            <th>CellPhone</th>
+            <th>Age</th>
+            <th>Editar</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.cellphone}}</td>
+            <td>{{user.age}}</td>
+            <td><button mat-button mat-dialog-close (click)="edit(user._id)">EDIT</button></td>
+        </tr>
+    </table>
+</div>
+  

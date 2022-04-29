@@ -20,7 +20,7 @@ h3{
 .grayDiv{
     background-color: rgb(34, 34, 34);
     margin: 20px;
-    height: 400px;
+    min-height: 400px;
     color: lightgray;
 }
 
@@ -29,7 +29,7 @@ h3{
     height: 200px;
     position: absolute;
     margin-left: 30%;
-    margin-top: -160px;
+    margin-top: -12%;
 }
 .imageDiv > img{
     width: 100%;
@@ -41,26 +41,32 @@ h3{
 }
 .secondDiv{
     margin: 20px;
-    margin-left: 50px;
-    text-align: left;
+    width: 100%;
     font-family: Optima, sans-serif;
-    h1{
-        font-family: Optima, sans-serif;
-        letter-spacing: 1px;
-    }
+}
+h1{
+    font-family: Optima, sans-serif;
+    letter-spacing: 1px;
+}
+.gallery{
+    display: flex;
+    justify-content: center;
 }
 .gallery1, .gallery2, .gallery3{
     width: 23%;
-    height: 300px;
+    min-height: 250px;
+    margin: 20px;
     display: inline-block;
     color: white;
-    margin: 15px;
+    text-align: center;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border-radius: 30px;
     padding: 20px;
-    margin-right: 80px;
     :hover{
         cursor: pointer
+    }
+    hr{
+        width: 30%;
     }
 }
 .imgGallery{
@@ -70,10 +76,6 @@ h3{
 
 .gallery1{
     background-color: rgb(34, 34, 34);
-    text-align: center;
-    hr{
-        width: 30%;
-    }
 }
 .gallery1:hover{
     box-shadow: 0px 15px 20px rgb(10, 10, 10);
@@ -83,12 +85,6 @@ h3{
 
 .gallery2{
     background-color: rgb(32, 165, 161);
-    // background-color: #ffda5f;
-    // background-color: rgb(163, 162, 162);
-    text-align: center;
-    hr{
-        width: 30%;
-    }
 }
 .gallery2:hover{
     box-shadow: 0px 15px 20px rgb(24, 122, 118);
@@ -98,10 +94,6 @@ h3{
 
 .gallery3{
     background-color: rgb(24, 122, 118);
-    text-align: center;
-    hr{
-        width: 30%;
-    }
 }
 .gallery3:hover{
     box-shadow: 0px 15px 20px rgb(17, 85, 83);

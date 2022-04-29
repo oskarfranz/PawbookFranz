@@ -9,6 +9,6 @@
     <tr *ngFor="let user of users">
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
-        <td><a routerLink="/posts" [queryParams]="{user:user.id}">Ver posts</a></td>
+        <td><a routerLink="/posts" [queryParams]="{user:user._id}">Ver posts</a></td>
     </tr>
 </table>

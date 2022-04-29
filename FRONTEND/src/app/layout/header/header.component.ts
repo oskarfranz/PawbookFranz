@@ -27,4 +27,7 @@ export class HeaderComponent implements OnInit {
   pets(){
     this.router.navigate(['/pets']);
   }
+  post(){
+    this.router.navigate(['/posts']);
+  }
 }

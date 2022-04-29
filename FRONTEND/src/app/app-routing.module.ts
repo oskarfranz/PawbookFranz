@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'applications', component: ApplicationsComponent},
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
   { path: '404', component: NotFoundComponent},
-  { path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
+  { path: 'posts', component: PostsComponent},
   { path: '**', redirectTo: '404', pathMatch: 'full'},
 ];
 

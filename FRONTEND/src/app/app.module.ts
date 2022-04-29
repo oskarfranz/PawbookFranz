@@ -29,6 +29,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { ApplicationsComponent } from './pages/applications/applications.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ModalComponent } from './pages/modal/modal.component';
+import {MatTableModule} from '@angular/material/table';
+import { ModalEditComponent } from './pages/modal-edit/modal-edit.component';
+
 
 // import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 
@@ -48,6 +51,7 @@ import { ModalComponent } from './pages/modal/modal.component';
     PetComponent,
     ApplicationsComponent,
     ModalComponent,
+    ModalEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,10 +69,11 @@ import { ModalComponent } from './pages/modal/modal.component';
     MatListModule,
     MatInputModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ModalComponent]
+  entryComponents: [ModalComponent, ModalEditComponent]
 })
 export class AppModule { }
