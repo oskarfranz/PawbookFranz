@@ -59,8 +59,7 @@ export class PetsComponent implements OnInit {
           console.log(mascota);
           updatedPets.push(mascota);
         }
-
-        if((filtro == '0-2' && mascota.age <= 2) || 
+        else if((filtro == '0-2' && mascota.age <= 2) || 
            (filtro == '3-6' && (mascota.age <= 6 && mascota.age >= 3)) || 
            (filtro == '7-9' && (mascota.age <= 9 && mascota.age >= 7)) || 
            (filtro == '9+'  && (mascota.age >= 9))){
@@ -69,9 +68,15 @@ export class PetsComponent implements OnInit {
           updatedPets.push(mascota);
           
         }
+        else if((filtro ==  mascota.specie)){
+          console.log(mascota);
+          updatedPets.push(mascota);
+        }
       });
     });
-    this.pets = updatedPets;
+    if(updatedPets.length>0){
+      this.pets = updatedPets;
+    }
   }
 
 

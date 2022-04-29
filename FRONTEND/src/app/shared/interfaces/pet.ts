@@ -7,5 +7,6 @@ export interface Pet {
     raza: string, 
     rescuedDate: string,
     size: string,
+    specie: string,
     applications: []
 }
