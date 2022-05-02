@@ -14,27 +14,26 @@ import { environment } from 'src/environments/environment.prod';
 export class SignupComponent implements OnInit {
 
   form: FormGroup;
-  userToRegister: any = {};
   socketClient: any  = null;
   users: any = [];
   invalidEmail: boolean = false;
   succesfullyAdd: boolean = false;
   role: boolean = false;
-
+  
   constructor(private formBuilder: FormBuilder, private registerService: RegisterService, private userService: UserService) { 
     this.form = formBuilder.group({
-      'Name': ['', Validators.required],
-      'LastName': ['', Validators.required],
+      'name': ['', Validators.required],
+      'lastname': ['', Validators.required],
       'username' : ['', Validators.required],
       'age' : ['', Validators.required],
-      'cellPhone' : ['', Validators.required],
+      'cellphone' : ['', Validators.required],
       'email' : ['', [Validators.required, Validators.email]], //si quereos mas de una valid van entre []
       'password' : ['', [Validators.required, Validators.minLength(8)]],
       'confirm': ['', [Validators.required, Validators.minLength(8)]],
       'role': ['', Validators.required],
-      'Ocupation': [''],
-      'Organization': [''],
-      'Location': ['']
+      'ocupation': [''],
+      'organization': [''],
+      'location': ['']
 
     },{
       validators: this.matchPassword.bind(this) //necesitamos pasarle el mismo contexto
@@ -43,25 +42,32 @@ export class SignupComponent implements OnInit {
 
   sendData(){
     console.log(this.form);
-    // this.userService.getUsers().subscribe(response => {
-    //   this.users = response;
-    // })
-    // if(this.users.find((user: any) => user.email === this.form.value.email)){
-    //   console.log('Sorry email already taken'); //si el email ya esta dado de alta
-    //   this.invalidEmail= true;
-    // }
-    // else if(this.form.valid){
-    //   this.invalidEmail= false;
-    //   console.log('Enviar datos');
-    //   console.log('signin up user...');
-    //   console.log(this.form);
-    //   this.registerService.registerUser(this.form.value).subscribe(response => {
-    //     console.log(response);
-    //     this.succesfullyAdd= true;
-    //   });
-    // }else{
-    //   console.log('Error, faltan datos');
-    // }
+    this.userService.getUsers().subscribe(response => {
+      this.users = response;
+    })
+    if(this.users.find((user: any) => user.email === this.form.value.email)){
+      console.log('Sorry email already taken'); //si el email ya esta dado de alta
+      this.invalidEmail= true;
+    }
+    else if(this.form.valid){
+      this.invalidEmail= false;
+      console.log('Enviar datos');
+      console.log('signin up user...');
+      console.log(this.form);
+
+      if(this.form.value.role === "adoptador"){
+        this.form.value.role = -1;
+      }else {     //rescatista
+        this.form.value.role = 1;
+      }
+
+      this.registerService.registerUser(this.form.value).subscribe(response => {
+        console.log(response);
+        this.succesfullyAdd= true;
+      });
+    }else{
+      console.log('Error, faltan datos');
+    }
   }
 
   matchPassword(){

@@ -11,14 +11,14 @@
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Name</mat-label>
-                <input matInput type="text" placeholder="Name" name="Name" formControlName="Name">
+                <input matInput type="text" placeholder="Name" name="Name" formControlName="name">
                 <mat-icon matSuffix>person_pin</mat-icon>
                 <mat-error>Name is a required field</mat-error>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>LastName</mat-label>
                 <mat-icon matSuffix>person_pin</mat-icon>
-                <input matInput type="text" placeholder="LastName" name="LastName" formControlName="LastName">
+                <input matInput type="text" placeholder="LastName" name="LastName" formControlName="lastname">
                 <mat-error>LastName is a required field</mat-error>
             </mat-form-field>
         </div>
@@ -39,7 +39,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>CellPhone</mat-label>
                 <mat-icon matSuffix>settings_cell</mat-icon>
-                <input matInput type="text" placeholder="cellPhone" name="cellPhone" formControlName="cellPhone">
+                <input matInput type="text" placeholder="cellPhone" name="cellPhone" formControlName="cellphone">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
@@ -63,24 +63,24 @@
             <mat-form-field appearance="fill" *ngIf="form.value.role==='rescatista'">
                 <mat-label>Ocupation</mat-label>
                 <mat-icon matSuffix>folder_shared</mat-icon>
-                <input matInput type="text" placeholder="Ocupation" name="Ocupation" formControlName="Ocupation">
+                <input matInput type="text" placeholder="Ocupation" name="Ocupation" formControlName="ocupation">
             </mat-form-field>
             <mat-form-field appearance="fill" *ngIf="form.value.role==='rescatista'">
                 <mat-label>Organization</mat-label>
                 <mat-icon matSuffix>bookmark</mat-icon>
-                <input matInput type="text" placeholder="Organization" name="Organization" formControlName="Organization">
+                <input matInput type="text" placeholder="Organization" name="Organization" formControlName="organization">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field appearance="fill" *ngIf="form.value.role==='adoptador'">
                 <mat-label>Ocupation</mat-label>
                 <mat-icon matSuffix>folder_shared</mat-icon>
-                <input matInput type="text" placeholder="Ocupation" name="Ocupation" formControlName="Ocupation">
+                <input matInput type="text" placeholder="Ocupation" name="Ocupation" formControlName="ocupation">
             </mat-form-field>
             <mat-form-field appearance="fill" *ngIf="form.value.role==='adoptador'">
                 <mat-label>Location</mat-label>
                 <mat-icon matSuffix> location_on</mat-icon>
-                <input matInput type="text" placeholder="Location" name="Location" formControlName="Location">
+                <input matInput type="text" placeholder="Location" name="Location" formControlName="location">
             </mat-form-field>
         </div>
         <div>

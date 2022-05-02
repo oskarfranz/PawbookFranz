@@ -113,7 +113,7 @@ router.post('/', userController.create);
  *         200:
  *           description: User was created succesfully
  */
- router.post('/', userController.create);
+ router.post('/register', userController.create);
 /**
  * @swagger
  *   /api/users/{id}:
