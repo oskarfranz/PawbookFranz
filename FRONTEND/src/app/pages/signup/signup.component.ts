@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, EmailValidator } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import * as socketIo from 'socket.io-client';
 import { RegisterService } from 'src/app/shared/services/register.service';
 import { UserService } from 'src/app/shared/services/user.service';
