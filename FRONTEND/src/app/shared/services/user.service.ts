@@ -17,4 +17,8 @@ export class UserService {
     const url = environment.socketUrl+'/api/users/'+idUser;
     return this.httpClient.get(url); //obtenemos usuarios haciendo get a la api
   }
+  updateUserById(idUser: any,user: any): Observable<any>{
+    const url = environment.socketUrl+'/api/users/'+idUser;
+    return this.httpClient.put(url, user, {responseType: 'text'}); //obtenemos usuarios haciendo get a la api
+  }
 }

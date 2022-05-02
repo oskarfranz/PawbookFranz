@@ -28,8 +28,7 @@ export class PostsComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    // dialogConfig.data = applications; //pasamos las solicitudes
-    console.log(idParam);
+    dialogConfig.data = idParam; //pasamos el id del usuario
     this.dialog.open(ModalEditComponent, dialogConfig);
   }
 
