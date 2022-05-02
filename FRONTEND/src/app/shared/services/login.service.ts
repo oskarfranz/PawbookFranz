@@ -14,7 +14,6 @@ export class LoginService {
     var post_headers = new HttpHeaders();
     post_headers.append('Access-Control-Allow-Origin', '*');
     const url = environment.socketUrl+'/api/login';
-    this.router.navigate(['/posts']);
     // return this.httpClient.post("http://localhost:3000/login", credentials, {
     //   headers: post_headers
     // });

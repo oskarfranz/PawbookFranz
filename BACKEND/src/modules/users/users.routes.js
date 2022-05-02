@@ -74,6 +74,48 @@ router.get('/:id', userController.getById);
 router.post('/', userController.create);
 /**
  * @swagger
+ *   /api/users/register:
+ *     post:
+ *       tags:
+ *       - Users
+ *       description: JSON with the information of the user to create
+ *       consumes:
+ *         application/json
+ *       parameters:
+ *         - in: body
+ *           name: user
+ *           required: true
+ *           description: The user to create
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               lastname:
+ *                 type: string
+ *               username:
+ *                 type: string
+ *               age:
+ *                 type: integer
+ *               cellphone:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *               ocupation:
+ *                 type: string
+ *               location:
+ *                 type: string
+ *               organization:
+ *                 type: string
+ *       responses: 
+ *         200:
+ *           description: User was created succesfully
+ */
+ router.post('/', userController.create);
+/**
+ * @swagger
  *   /api/users/{id}:
  *     put:
  *       tags:

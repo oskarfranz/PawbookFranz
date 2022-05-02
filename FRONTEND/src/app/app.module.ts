@@ -31,6 +31,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ModalComponent } from './pages/modal/modal.component';
 import {MatTableModule} from '@angular/material/table';
 import { ModalEditComponent } from './pages/modal-edit/modal-edit.component';
+import { ModalSuccessComponent } from './pages/modal-success/modal-success.component';
 
 
 // import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
@@ -52,6 +53,7 @@ import { ModalEditComponent } from './pages/modal-edit/modal-edit.component';
     ApplicationsComponent,
     ModalComponent,
     ModalEditComponent,
+    ModalSuccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +76,6 @@ import { ModalEditComponent } from './pages/modal-edit/modal-edit.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ModalComponent, ModalEditComponent]
+  entryComponents: [ModalComponent, ModalEditComponent, ModalSuccessComponent]
 })
 export class AppModule { }

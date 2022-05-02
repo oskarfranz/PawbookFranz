@@ -42,24 +42,25 @@ export class LoginComponent implements OnInit {
       this.flagBadLogin = true;
       return;
     }
-    this.loginService.login(this.credentials).subscribe(response =>{
+    this.loginService.login(this.credentials).subscribe((response) =>{
       console.log(response);
       this.authService.save(response, this.credentials.email),
       this.router.navigate(['/home']);
-    }, error=>{
+    }, (error) => {
       console.log(error.status);
       if(error.status == 401){
         //Unauthorizes status
         this.flagUnauthorized = true;
       }
+      return;
     });
 
-    //START LOGIN
-    //POST to /login
-    this.loginService.login(this.credentials).subscribe(response => {
-      console.log('Response: ', response);
-      this.token = response;
-    })
+    // //START LOGIN
+    // //POST to /login
+    // this.loginService.login(this.credentials).subscribe(response => {
+    //   console.log('Response: ', response);
+    //   this.token = response;
+    // })
   }
 
 }

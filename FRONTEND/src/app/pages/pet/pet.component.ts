@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PetService } from 'src/app/shared/services/pet.service';
 import { Pet } from '../../shared/interfaces/pet';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import { ModalSuccessComponent } from '../modal-success/modal-success.component';
 
 @Component({
   selector: 'app-pet',
@@ -14,7 +16,7 @@ export class PetComponent implements OnInit {
   pet: Pet[] = [];
   idPet: any = localStorage.getItem('idPet');
 
-  constructor(private router: Router, petService: PetService) {
+  constructor(private router: Router, petService: PetService, private dialog: MatDialog) {
     this.petService = petService;
   }
 
@@ -37,5 +39,9 @@ export class PetComponent implements OnInit {
     this.petService.updatePet(this.idPet, bodyRequest).subscribe(response => {
       console.log('Response: ', response);
     })
+    // const dialogConfig = new MatDialogConfig();
+    // dialogConfig.disableClose = true;
+    // dialogConfig.autoFocus = true;
+    this.dialog.open(ModalSuccessComponent);
   }
 }

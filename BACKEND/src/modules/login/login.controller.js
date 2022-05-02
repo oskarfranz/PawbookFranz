@@ -17,7 +17,7 @@ const AdminController = {
                     res.sendStatus(401);
                 }
             }else{
-                res.message("User with email: " + email + " could not be found").sendStatus(404);
+                res.send("User with email: " + email + " could not be found").sendStatus(404);
             }
         });
     }
