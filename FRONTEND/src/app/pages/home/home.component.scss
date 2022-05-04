@@ -52,8 +52,8 @@ h1{
     display: flex;
     justify-content: center;
 }
-.gallery1, .gallery2, .gallery3{
-    width: 23%;
+.gallery1, .gallery2, .gallery3, .gallery4{
+    width: 15%;
     min-height: 250px;
     margin: 20px;
     display: inline-block;
@@ -96,6 +96,15 @@ h1{
     background-color: rgb(24, 122, 118);
 }
 .gallery3:hover{
+    box-shadow: 0px 15px 20px rgb(17, 85, 83);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.gallery4{
+    background-color: rgb(55, 189, 185);
+}
+.gallery4:hover{
     box-shadow: 0px 15px 20px rgb(17, 85, 83);
     color: #fff;
     transform: translateY(-7px);

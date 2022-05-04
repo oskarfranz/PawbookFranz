@@ -19,6 +19,9 @@ export class HomeComponent implements OnInit {
   solicitudes(){
     this.router.navigate(['/applications']);
   }
+  adopcion(){
+    this.router.navigate(['/newpet']);
+  }
 
 
 }
