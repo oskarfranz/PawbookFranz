@@ -25,7 +25,7 @@ export class PetService {
   }
   createPet(body: any): Observable<any>{
     const url = environment.socketUrl+'/api/pets/';
-    return this.httpClient.post(url, body); //post pet
+    return this.httpClient.post(url, body, {responseType: 'text'}); //post pet
 
   }
 }

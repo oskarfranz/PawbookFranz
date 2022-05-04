@@ -16,8 +16,6 @@ export class NewpetComponent implements OnInit {
   newPetForm: FormGroup;
   socketClient: any  = null;
   pets: any = [];
-  succesfullyAdd: boolean = false;
-  role: boolean = false;
   
   constructor(private formBuilder: FormBuilder, private registerService: RegisterService, private userService: UserService, private petService: PetService) { 
     this.newPetForm = formBuilder.group({
