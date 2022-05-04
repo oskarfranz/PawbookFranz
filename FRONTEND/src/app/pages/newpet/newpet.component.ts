@@ -27,11 +27,14 @@ export class NewpetComponent implements OnInit {
       'location' : ['', Validators.required],
       'rescuedDate': ['', Validators.required],
       'image': ['', Validators.required],
-      'specie': ['', Validators.required]
+      'specie': ['', Validators.required],
+      'rescuer': [''],
+      'applications': [[]]
     })
   }
 
   sendData(){
+    this.newPetForm.value.rescuer = localStorage.getItem('userEmail')
     console.log(this.newPetForm);
     this.petService.getPets().subscribe(response => {
       this.pets = response;

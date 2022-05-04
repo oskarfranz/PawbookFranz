@@ -3,8 +3,8 @@ import { PetService } from 'src/app/shared/services/pet.service';
 import { Router } from '@angular/router';
 import { Pet } from 'src/app/shared/interfaces/pet';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import { PetmodalComponent } from '../petmodal/petmodal.component';
 import { ModalComponent } from '../modal/modal.component';
-
 @Component({
   selector: 'app-applications',
   templateUrl: './applications.component.html',
@@ -12,6 +12,7 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class ApplicationsComponent implements OnInit {
   pets: Pet[] = [];
+  visiblePets: Pet[] = [];
 
   constructor(private router: Router, private petService: PetService, private dialog: MatDialog) { }
 
@@ -19,8 +20,21 @@ export class ApplicationsComponent implements OnInit {
     this.petService.getPets().subscribe(response =>{
       console.log(response);
       this.pets = response;
+      this.visiblePets = this.updateVisiblePets(this.pets);
     });
   }
+
+  updateVisiblePets(allPets: Pet[]){
+    let visblePets: Pet[] = [];
+    this.pets.forEach(function(pet, index, array) {
+      if(localStorage.getItem('userEmail') === pet.rescuer){
+        // console.log(pet);
+        visblePets.push(pet);
+      }
+    });
+    return visblePets;
+  }
+
   viewApplications(idPet: any, name: any){
     console.log(idPet, name);
     this.petService.getPetById(idPet).subscribe(response =>{
@@ -33,9 +47,12 @@ export class ApplicationsComponent implements OnInit {
       this.dialog.open(ModalComponent, dialogConfig);
     });
   }
-  edit(){
-    // this.userService.getUserById('6269c14a276d3b0d8416b472').subscribe(response =>{
-    //   console.log(response);
-    // })
+  edit(idPet: any){
+    console.log(idPet);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = idPet;
+    this.dialog.open(PetmodalComponent, dialogConfig);
   }
 }

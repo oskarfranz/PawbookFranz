@@ -34,8 +34,6 @@ const PetController = {
     update: (req, res)=>{
         var id = new ObjectId(req.params.id);
         const pet = new Pet();
-        console.log(id);
-        console.log(req.body);
         pet.update(id, req.body).then((results) => {
             if(results){
                 res.send(results);

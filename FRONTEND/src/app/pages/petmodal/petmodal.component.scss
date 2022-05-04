@@ -1,0 +1,78 @@
+input .ng-dirty .ng-touched{
+    border: solid 1px red; 
+}
+form{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 40%;
+    background-color: white;
+    margin-bottom: 40px;
+    width: 90%;
+    margin-left:5%;
+}
+form div {
+    margin: 0;
+}
+h2{
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 48%;
+    font-family: Optima, sans-serif;
+    letter-spacing: 1px;
+}
+.signup {
+    margin: 5%;
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+  
+.signup:hover {
+    background-color: green;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+.invalid{
+    padding: 10px;
+    background-color: lightyellow;
+    // height: 15px;
+    margin-left: 5%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: solid 1px black;
+}
+.valid{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: lightseagreen;
+    // height: 15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: solid 1px black;
+}
+.imgTop{
+    width: 60%;
+    margin-left:20%;
+}
+.mat-form-field{
+    margin: 10px;
+    display: inline-block;
+    width: 45%;
+}
+.modal{
+    height:85vh
+}

@@ -1,0 +1,75 @@
+<div class="modal">
+    <form [formGroup]="petForm" (submit)="sendData()">
+    
+        <div>
+            <div>
+                <label>
+                <input type="radio" value="Perro" formControlName="specie"/>Perro
+                <input type="radio" value="Gato" formControlName="specie"/>Gato
+                </label>
+            </div>
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" placeholder="name" name="name" formControlName="name">
+                <mat-icon matSuffix>person_pin</mat-icon>
+                <mat-error>Name is a required field</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Raza</mat-label>
+                <mat-icon matSuffix>color_lens</mat-icon>
+                <input matInput type="text" placeholder="raza" name="raza" formControlName="raza">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Sex</mat-label>
+                <mat-icon matSuffix> filter_list</mat-icon>
+                <input matInput type="text" placeholder="M | H" name="sex" formControlName="sex">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Talla</mat-label>
+                <mat-icon matSuffix> filter_list</mat-icon>
+                <input matInput type="text" placeholder="size" name="size" formControlName="size">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill" style="width: 93%;">
+                <mat-label>Ciudad</mat-label>
+                <mat-icon matSuffix>location_on</mat-icon>
+                <input matInput type="text" placeholder="location" name="location" formControlName="location">
+                <mat-error>Username is a required field</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Edad</mat-label>
+                <mat-icon matSuffix> format_list_numbered_rtl</mat-icon>
+                <input matInput type="number" placeholder="age" name="age" formControlName="age">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Fecha de rescate</mat-label>
+                <mat-icon matSuffix>date_range</mat-icon>
+                <input matInput type="date" placeholder="rescuedDate" name="rescuedDate" formControlName="rescuedDate">
+                <mat-error>Username is a required field</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill" style="width: 93%;">
+                <mat-label>Link de imagen</mat-label>
+                <mat-icon matSuffix> link</mat-icon>
+                <input matInput type="url" placeholder="age" name="age" formControlName="image">
+            </mat-form-field>
+        </div>
+        
+        <div>
+        
+            <div>
+                <button class="signup" mat-dialog-close>Publicar</button>
+            </div>
+            <div>
+                <button mat-button mat-dialog-close color="warn">Cancelar</button>
+            </div>
+    
+        </div>
+    </form>
+</div>

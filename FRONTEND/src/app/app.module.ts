@@ -33,6 +33,7 @@ import {MatTableModule} from '@angular/material/table';
 import { ModalEditComponent } from './pages/modal-edit/modal-edit.component';
 import { ModalSuccessComponent } from './pages/modal-success/modal-success.component';
 import { NewpetComponent } from './pages/newpet/newpet.component';
+import { PetmodalComponent } from './pages/petmodal/petmodal.component';
 
 
 // import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
@@ -56,6 +57,7 @@ import { NewpetComponent } from './pages/newpet/newpet.component';
     ModalEditComponent,
     ModalSuccessComponent,
     NewpetComponent,
+    PetmodalComponent,
   ],
   imports: [
     BrowserModule,
