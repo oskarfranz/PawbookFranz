@@ -10,7 +10,7 @@
         <mat-icon>supervised_user_circle</mat-icon>
     </button>
     <span>PawBook</span>
-   <button mat-fab color="warn" class="cerrarSesion" (click)="logout()">
+   <button *ngIf="isLogged" mat-fab color="warn" class="cerrarSesion" (click)="logout()">
        <mat-icon>exit_to_app</mat-icon>
    </button>
   </mat-toolbar>
