@@ -17,14 +17,14 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'}, //ya me redirije a login
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
-  { path: 'pets', component: PetsComponent},
-  { path: 'pet', component: PetComponent},
+  { path: 'pets', component: PetsComponent, canActivate: [AuthGuard]},
+  { path: 'pet', component: PetComponent, canActivate: [AuthGuard]},
   { path: 'home', component: HomeComponent},
-  { path: 'applications', component: ApplicationsComponent},
+  { path: 'applications', component: ApplicationsComponent, canActivate: [AuthGuard]},
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
-  { path: 'newpet', component: NewpetComponent},
+  { path: 'newpet', component: NewpetComponent, canActivate: [AuthGuard]},
   { path: '404', component: NotFoundComponent},
-  { path: 'posts', component: PostsComponent},
+  { path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: '404', pathMatch: 'full'},
 ];
 
