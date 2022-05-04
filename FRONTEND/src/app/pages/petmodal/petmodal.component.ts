@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PetService } from 'src/app/shared/services/pet.service';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Pet } from 'src/app/shared/interfaces/pet';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-petmodal',
@@ -39,7 +40,7 @@ export class PetmodalComponent implements OnInit {
     rescuer: '',
     applications: []
   };
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private formBuilder: FormBuilder,  private petService: PetService) { 
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private formBuilder: FormBuilder,  private petService: PetService, private dialog: MatDialogRef<PetmodalComponent>) { 
     this.petForm = formBuilder.group({
       'name': ['', Validators.required],
       'age' : ['', Validators.required],
@@ -90,7 +91,11 @@ export class PetmodalComponent implements OnInit {
     this.updatedPet.applications = body.value.applications;
     console.log(this.updatedPet);
     this.petService.updatePet(this.data, this.updatedPet).subscribe(response =>{
-      console.log('Listo');
+      this.closeDialog();
     });
+  }
+  
+  closeDialog(){
+    this.dialog.close();
   }
 }
