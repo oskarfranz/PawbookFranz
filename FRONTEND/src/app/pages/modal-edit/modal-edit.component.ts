@@ -1,8 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { UserService } from 'src/app/shared/services/user.service';
 import { User } from 'src/app/shared/interfaces/user';
+import { ModalSuccessComponent } from '../modal-success/modal-success.component';
 
 @Component({
   selector: 'app-modal-edit',
@@ -28,7 +30,7 @@ export class ModalEditComponent implements OnInit {
     role: 0
   };
 
-  constructor(private formBuilder: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any, private userService: UserService) {}
+  constructor(private formBuilder: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any, private userService: UserService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.userService.getUserById(this.data).subscribe(response =>{
@@ -53,6 +55,10 @@ export class ModalEditComponent implements OnInit {
     this.userService.updateUserById(this.data, this.user).subscribe(response =>{
       console.log(response);
     });
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(ModalSuccessComponent, dialogConfig);
   }
 
 }

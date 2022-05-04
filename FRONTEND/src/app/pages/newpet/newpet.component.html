@@ -24,11 +24,18 @@
         </div>
         <div>
             <mat-form-field appearance="fill">
+                <mat-label>Sex</mat-label>
+                <mat-icon matSuffix> filter_list</mat-icon>
+                <input matInput type="text" placeholder="M | H" name="sex" formControlName="sex">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
                 <mat-label>Talla</mat-label>
                 <mat-icon matSuffix> filter_list</mat-icon>
                 <input matInput type="text" placeholder="size" name="size" formControlName="size">
             </mat-form-field>
-            <mat-form-field appearance="fill">
+        </div>
+        <div>
+            <mat-form-field appearance="fill" style="width: 93%;">
                 <mat-label>Ciudad</mat-label>
                 <mat-icon matSuffix>location_on</mat-icon>
                 <input matInput type="text" placeholder="location" name="location" formControlName="location">

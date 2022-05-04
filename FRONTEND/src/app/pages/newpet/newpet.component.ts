@@ -22,7 +22,8 @@ export class NewpetComponent implements OnInit {
       'name': ['', Validators.required],
       'age' : ['', Validators.required],
       'raza' : ['', Validators.required],
-      'size' : ['', Validators.required], //si quereos mas de una valid van entre []
+      'size' : ['', Validators.required],
+      'sex' : ['', Validators.required],
       'location' : ['', Validators.required],
       'rescuedDate': ['', Validators.required],
       'image': ['', Validators.required],
