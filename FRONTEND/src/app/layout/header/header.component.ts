@@ -9,12 +9,16 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  isLogged: boolean = false;
+
   constructor(private authService: AuthService, private router: Router) {
 
    }
 
   ngOnInit(): void {
+    this.authService.isLoggedIn()? this.isLogged = true: this.isLogged = false;
   }
+
 
   logout(){
     this.authService.remove(); //quitamos token
@@ -22,7 +26,9 @@ export class HeaderComponent implements OnInit {
   };
 
   home(){
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home']).then(() => {
+      window.location.reload();
+    });
   }
   pets(){
     this.router.navigate(['/pets']);
