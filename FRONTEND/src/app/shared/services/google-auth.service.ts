@@ -31,7 +31,6 @@ export class GoogleAuthService {
           console.log('Valid token');
           this.oAuthService.loadUserProfile().then( (profile) => {
             console.log('User: ' + JSON.stringify(profile));
-
             localStorage.setItem('google-token', 'haha');
           }).catch(error => {
               console.log('Hey');

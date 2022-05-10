@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { GoogleAuthService } from 'src/app/shared/services/google-auth.service';
+
 
 @Component({
   selector: 'app-header',
@@ -11,7 +13,7 @@ export class HeaderComponent implements OnInit {
   
   isLogged: boolean = false;
   
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private readonly googleAuth: GoogleAuthService) {
   }
   
   ngOnInit(): void {
@@ -27,6 +29,7 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.authService.remove(); //quitamos token
+    this.googleAuth.signOut();
     // window.location.reload();
     this.router.navigate(['/login']); //redirigimos a login
     this.ngOnInit();

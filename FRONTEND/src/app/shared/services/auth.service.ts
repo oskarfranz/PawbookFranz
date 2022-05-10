@@ -31,7 +31,7 @@ export class AuthService {
     console.log("pass");
     localStorage.removeItem('token');
     localStorage.removeItem('google-token');
-
+    
     localStorage.removeItem('userEmail');//cerramos sesion
   }
 }
