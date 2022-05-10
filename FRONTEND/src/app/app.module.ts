@@ -34,6 +34,7 @@ import { ModalEditComponent } from './pages/modal-edit/modal-edit.component';
 import { ModalSuccessComponent } from './pages/modal-success/modal-success.component';
 import { NewpetComponent } from './pages/newpet/newpet.component';
 import { PetmodalComponent } from './pages/petmodal/petmodal.component';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 
 // import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
@@ -76,7 +77,8 @@ import { PetmodalComponent } from './pages/petmodal/petmodal.component';
     MatInputModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    OAuthModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

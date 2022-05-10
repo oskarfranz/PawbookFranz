@@ -5,6 +5,7 @@ import { LoginService } from 'src/app/shared/services/login.service';
 import * as socketIo from 'socket.io-client';
 import { environment } from 'src/environments/environment.prod';
 import { HttpResponse } from '@angular/common/http';
+import { GoogleAuthService } from 'src/app/shared/services/google-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginService: LoginService, 
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private readonly googleAuth: GoogleAuthService
   ) { }
 
   ngOnInit(): void {
@@ -54,13 +56,20 @@ export class LoginComponent implements OnInit {
       }
       return;
     });
-
     // //START LOGIN
     // //POST to /login
     // this.loginService.login(this.credentials).subscribe(response => {
     //   console.log('Response: ', response);
     //   this.token = response;
     // })
+  }
+
+  googleLogin() {
+    this.googleAuth.login();
+  }
+
+  googleLogout(){
+    this.googleAuth.signOut();
   }
 
 }

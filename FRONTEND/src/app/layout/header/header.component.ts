@@ -8,26 +8,33 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  
   isLogged: boolean = false;
-
+  
   constructor(private authService: AuthService, private router: Router) {
-
-   }
-
+  }
+  
   ngOnInit(): void {
-    this.authService.isLoggedIn()? this.isLogged = true: this.isLogged = false;
+    this.isLoggedIn()
   }
 
+  
+  isLoggedIn(){
+    // while(true){
+     this.isLogged = this.authService.isLoggedIn();
+    // }
+  }
 
   logout(){
     this.authService.remove(); //quitamos token
+    // window.location.reload();
     this.router.navigate(['/login']); //redirigimos a login
+    this.ngOnInit();
   };
 
   home(){
     this.router.navigate(['/home']).then(() => {
-      window.location.reload();
+      // window.location.reload();
     });
   }
   pets(){
