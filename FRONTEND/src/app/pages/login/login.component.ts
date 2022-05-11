@@ -33,6 +33,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if(this.authService.isLoggedIn()){
+      this.router.navigate(['/home']);
+    }
      this.socketClient = socketIo.io(environment.socketUrl);
      this.socketClient.on('recieveCredentials', (data:any)=>{
        console.log('Llegaron nuevas credenciales', data);
@@ -54,7 +57,7 @@ export class LoginComponent implements OnInit {
     }
     this.loginService.login(this.credentials).subscribe((response) =>{
       console.log(response);
-      
+
       let user = this.users.find((user: any) => user.email === this.credentials.email)
       console.log(user);
 
