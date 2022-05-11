@@ -6,6 +6,8 @@ import * as socketIo from 'socket.io-client';
 import { environment } from 'src/environments/environment.prod';
 import { HttpResponse } from '@angular/common/http';
 import { GoogleAuthService } from 'src/app/shared/services/google-auth.service';
+import { UserService } from 'src/app/shared/services/user.service';
+
 
 @Component({
   selector: 'app-login',
@@ -19,12 +21,15 @@ export class LoginComponent implements OnInit {
   flagUnauthorized: boolean = false;
   flagBadLogin: boolean = false;
   token: String = "";
+  users: any = [];
+
 
 
   constructor(private loginService: LoginService, 
     private authService: AuthService,
     private router: Router,
-    private readonly googleAuth: GoogleAuthService
+    private readonly googleAuth: GoogleAuthService,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +37,9 @@ export class LoginComponent implements OnInit {
      this.socketClient.on('recieveCredentials', (data:any)=>{
        console.log('Llegaron nuevas credenciales', data);
      })
+     this.userService.getUsers().subscribe(response => {
+      this.users = response;
+    })
   }
 
   login(){
@@ -46,7 +54,11 @@ export class LoginComponent implements OnInit {
     }
     this.loginService.login(this.credentials).subscribe((response) =>{
       console.log(response);
-      this.authService.save(response, this.credentials.email),
+      
+      let user = this.users.find((user: any) => user.email === this.credentials.email)
+      console.log(user);
+
+      this.authService.save(response, this.credentials.email, user.role),
       this.router.navigate(['/home']);
     }, (error) => {
       console.log(error.status);

@@ -6,7 +6,7 @@
     <button (click)="pets()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>pets</mat-icon>
     </button>
-    <button (click)="post()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button *ngIf="role"(click)="post()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>supervised_user_circle</mat-icon>
     </button>
     <span>PawBook</span>

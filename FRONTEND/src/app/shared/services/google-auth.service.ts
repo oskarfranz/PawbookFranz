@@ -3,6 +3,8 @@ import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
 import { RegisterService } from 'src/app/shared/services/register.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
+
 
 
 
@@ -26,7 +28,7 @@ export class GoogleAuthService {
   user: any;
 
 
-  constructor(private formBuilder: FormBuilder, private readonly oAuthService: OAuthService, private userService: UserService,  private registerService: RegisterService) { 
+  constructor( private authService: AuthService, private formBuilder: FormBuilder, private readonly oAuthService: OAuthService, private userService: UserService,  private registerService: RegisterService) { 
     this.form = formBuilder.group({
       'name': ['', Validators.required],
       'lastname': ['', Validators.required],
@@ -40,6 +42,10 @@ export class GoogleAuthService {
       'ocupation': [''],
       'organization': [''],
       'location': ['']
+    })
+
+    this.userService.getUsers().subscribe(response => {
+      this.users = response;
     })
 
     oAuthService.configure(oAuthConfig);
@@ -57,24 +63,26 @@ export class GoogleAuthService {
         if(this.oAuthService.hasValidAccessToken()){
           console.log('Valid token');
           this.oAuthService.loadUserProfile().then( (profile) => {
-            localStorage.setItem('google-token', 'token');
+
             this.user = JSON.parse(JSON.stringify(profile));
-            console.log(this.user.info)  
+            console.log(this.user)  
             //PARSE user profile to form
             this.form.value.email = this.user.info.email;
             this.form.value.name = this.user.info.given_name;
             this.form.value.lastname = this.user.info.family_name;
             this.form.value.role = -1;
+
+            this.authService.googleSave('token', this.user.info.email, this.form.value.role);
+
             
 
-            this.userService.getUsers().subscribe(response => {
-              this.users = response;
-            })
+           
 
             if(this.users.find((user: any) => user.email === this.form.value.email)){
               console.log('User already registered'); //si el email ya esta dado de alta
             } else{
-              console.log(this.form)
+              console.log(this.users)
+              console.log('User not registered')
               this.registerService.registerUser(this.form.value).subscribe(response => {
                 console.log(response);
                 this.succesfullyAdd= true;
@@ -87,7 +95,7 @@ export class GoogleAuthService {
           });
 
         } else {
-          console.log('Invalid token');
+          console.log('Not logged with Google');
         }
       })
     })

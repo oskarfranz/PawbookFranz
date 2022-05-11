@@ -12,6 +12,7 @@ import { GoogleAuthService } from 'src/app/shared/services/google-auth.service';
 export class HeaderComponent implements OnInit {
   
   isLogged: boolean = false;
+  role: boolean = (localStorage.getItem('role') === '0')? true : (localStorage.getItem('role') === '1')? true : false;
   
   constructor(private authService: AuthService, private router: Router, private readonly googleAuth: GoogleAuthService) {
   }

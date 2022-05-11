@@ -7,14 +7,17 @@ export class AuthService {
 
   constructor() { }
 
-  save(token: string, email: string){
+  save(token: string, email: string, role: number){
     localStorage.setItem('token', token);
     localStorage.setItem('userEmail', email);
+    localStorage.setItem('role', String(role));
+
   }
 
-  googleSave(token: string, email: string){
+  googleSave(token: string, email: string, role: number){
     localStorage.setItem('google-token', token);
     localStorage.setItem('userEmail', email);
+    localStorage.setItem('role', String(role));
   }
 
   get(): string{
@@ -28,10 +31,10 @@ export class AuthService {
   }
 
   remove(): void{
-    console.log("pass");
+    console.log("Logging out...");
     localStorage.removeItem('token');
     localStorage.removeItem('google-token');
-    
+    localStorage.removeItem('role');
     localStorage.removeItem('userEmail');//cerramos sesion
   }
 }
