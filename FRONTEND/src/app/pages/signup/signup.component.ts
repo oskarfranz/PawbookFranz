@@ -4,6 +4,8 @@ import * as socketIo from 'socket.io-client';
 import { RegisterService } from 'src/app/shared/services/register.service';
 import { UserService } from 'src/app/shared/services/user.service';
 import { environment } from 'src/environments/environment.prod';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,7 +22,7 @@ export class SignupComponent implements OnInit {
   succesfullyAdd: boolean = false;
   role: boolean = false;
   
-  constructor(private formBuilder: FormBuilder, private registerService: RegisterService, private userService: UserService) { 
+  constructor(private formBuilder: FormBuilder, private registerService: RegisterService, private userService: UserService, private authService: AuthService, private router: Router) { 
     this.form = formBuilder.group({
       'name': ['', Validators.required],
       'lastname': ['', Validators.required],
@@ -81,6 +83,9 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.authService.isLoggedIn()){
+      this.router.navigate(['/home']);
+    }
     this.socketClient = socketIo.io(environment.socketUrl);
     this.userService.getUsers().subscribe(response => {
       this.users = response;
