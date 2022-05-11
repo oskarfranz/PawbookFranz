@@ -28,8 +28,8 @@ mat-form-field{
     width: 100%;
 }
 .login {
-    margin: 5%;
-    width: 140px;
+    margin: 0%;
+    width: 150px;
     height: 45px;
     font-family: Optima, sans-serif;
     font-size: 11px;
@@ -45,7 +45,7 @@ mat-form-field{
     cursor: pointer;
     outline: none;
 }
-  
+
 .login:hover {
     background-color: green;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);

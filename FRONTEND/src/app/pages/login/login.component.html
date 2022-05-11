@@ -19,6 +19,12 @@
         <div>
             <button class="login">LogIn</button>
         </div>
+        <div>
+            <button class="login googleAuth" type="reset" (click)="googleLogin()">
+                 <span><img style="height:18px; position: relative; top: 5px; left:-3px"src="https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png"></span>
+                 <span style="line-height: 35px">Google AUTH</span>
+            </button>
+        </div>
         <div class="invalidField">
             <span *ngIf="flagUnauthorized">Password or email invalid</span>
         </div>
@@ -31,12 +37,6 @@
         <div>
             Don't have an account? 
             <a routerLink = "/signup">Sign up here!</a> 
-        </div>
-        <div>
-            <button class="googleAuth" type="reset" (click)="googleLogin()">Google Auth</button>
-        </div>
-        <div>
-            <button class="googleAuth" type="reset" (click)="googleLogout()">Logout from google</button>
         </div>
     </form>
 

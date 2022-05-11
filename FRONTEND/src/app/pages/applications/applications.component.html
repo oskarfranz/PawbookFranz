@@ -1,7 +1,7 @@
 <div>
     <h1>Solicitudes</h1>
-    <h2 *ngIf="!visiblePets.length">alo</h2>
-    <mat-card *ngFor="let pet of visiblePets ">
+    <h2 *ngIf="!visiblePets.length">No tienes ninguna mascota en adopción.</h2>
+    <mat-card *ngFor="let pet of visiblePets">
         <mat-card-header>
           <mat-card-title>{{pet.name}}</mat-card-title>
           <mat-card-subtitle>{{pet.raza}}</mat-card-subtitle>
