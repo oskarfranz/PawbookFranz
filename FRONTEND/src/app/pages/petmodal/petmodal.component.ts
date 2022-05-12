@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ComponentFactoryResolver } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PetService } from 'src/app/shared/services/pet.service';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -60,6 +60,8 @@ export class PetmodalComponent implements OnInit {
   ngOnInit(): void {
     this.petService.getPetById(this.idPet).subscribe(response =>{      
       this.pet = response;
+      console.log(response);
+      console.log(response[0].applications);
       this.petForm.setValue({
         name: response[0].name,
         age: response[0].age,
@@ -71,7 +73,7 @@ export class PetmodalComponent implements OnInit {
         image : response[0].image,
         specie : response[0].specie,
         rescuer : response[0].rescuer,
-        applications: []
+        applications: response[0].applications
       })
     });
   }
