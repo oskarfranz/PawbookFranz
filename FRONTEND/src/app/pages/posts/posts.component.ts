@@ -16,8 +16,12 @@ import { ModalEditComponent } from '../modal-edit/modal-edit.component';
 export class PostsComponent implements OnInit {
 
   users: User[] = [];
-  constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private dialog: MatDialog) { }
+  constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private dialog: MatDialog, private router: Router) { }
   ngOnInit(): void {
+    let admin = localStorage.getItem('role') == '0' ? true: false;
+    if(!admin){
+      this.router.navigate(['/home']);
+    }
     this.userService.getUsers().subscribe(response =>{
       this.users = response;
       console.log(this.users);
