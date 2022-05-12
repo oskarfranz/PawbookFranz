@@ -14,6 +14,7 @@ export class PetsComponent implements OnInit {
   pets: Pet[] = [];
   allPets: Pet[] = []
   private filters: String[] = [];
+  isPetsEmpty: Boolean = false;
 
   constructor(private router: Router, petService: PetService) {
     this.petService = petService;
@@ -55,27 +56,58 @@ export class PetsComponent implements OnInit {
     filters.forEach(function(filtro, indice, arreglo) {
       mascotas.forEach(function(mascota, index, array) {
         // console.log(mascota.size + "  " + filtro);
-        if(filtro == mascota.size){
-          console.log(mascota);
-          updatedPets.push(mascota);
-        }
-        else if((filtro == '0-2' && mascota.age <= 2) || 
+        if(filters.length == 1){
+          // console.log(filters.length)
+          // console.log(filters)
+          if(filtro == mascota.size){
+            // console.log(mascota);
+            updatedPets.push(mascota);
+          } 
+          else if((filtro == '0-2' && mascota.age <= 2) || 
            (filtro == '3-6' && (mascota.age <= 6 && mascota.age >= 3)) || 
            (filtro == '7-9' && (mascota.age <= 9 && mascota.age >= 7)) || 
            (filtro == '9+'  && (mascota.age >= 9))){
 
-          console.log(mascota);
-          updatedPets.push(mascota);
+            // console.log(mascota);
+            updatedPets.push(mascota);
           
+          }
+          else if((filtro ==  mascota.specie)){
+            // console.log(mascota);
+            updatedPets.push(mascota);
+          }
+        } 
+        else if(filters.length == 2){
+          if((filtro ==  mascota.specie)){
+            console.log()
+            if(filters[indice+1] == mascota.size){
+              // console.log(mascota);
+              updatedPets.push(mascota);
+            } 
+          }
         }
-        else if((filtro ==  mascota.specie)){
-          console.log(mascota);
-          updatedPets.push(mascota);
+        else if(filters.length == 3){
+          if((filtro ==  mascota.specie)){
+            if(filters[indice+1] == mascota.size){
+              if((filters[indice+2] == '0-2' && mascota.age <= 2) || 
+                 (filtro == '3-6' && (mascota.age <= 6 && mascota.age >= 3)) || 
+                 (filtro == '7-9' && (mascota.age <= 9 && mascota.age >= 7)) || 
+                 (filtro == '9+'  && (mascota.age >= 9))){
+                console.log("PASS")
+                // console.log(mascota);
+                updatedPets.push(mascota);
+          }
+            } 
+          }
         }
       });
     });
     if(updatedPets.length>0){
       this.pets = updatedPets;
+      this.isPetsEmpty = false;
+    } else {
+      this.isPetsEmpty = true;
+      console.log('There is no pets')
     }
   }
 

@@ -23,6 +23,7 @@
     </mat-drawer>
     <mat-drawer-content>
         <div class="mainDiv">
+            <h2 *ngIf="isPetsEmpty">No hay mascotas que coincidan con los filtros seleccionados</h2>
             <mat-card *ngFor="let pet of pets">
                 <img src="{{pet.image}}" class="imgDog">
                 <mat-card-title><br>{{pet.name}}</mat-card-title>
