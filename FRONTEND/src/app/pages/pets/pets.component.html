@@ -34,9 +34,9 @@
                     </button>
                 </mat-card-actions>
             </mat-card>
-            <mat-paginator [length]="10"
-              [pageSize]="10"
-              [pageSizeOptions]="[1, 3, 6, 10]"
+            <mat-paginator [length]="this.backup.length"
+              [pageSizeOptions]="[6, 10]"
+              (page)="onPaginateChange($event)"
               aria-label="Select page">
             </mat-paginator>
         </div>

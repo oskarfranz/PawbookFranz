@@ -12,7 +12,8 @@ export class PetsComponent implements OnInit {
   razaSelected: boolean = false;
   private petService;
   pets: Pet[] = [];
-  allPets: Pet[] = []
+  allPets: Pet[] = [];
+  backup: Pet[] = [];
   private filters: String[] = [];
   isPetsEmpty: Boolean = false;
 
@@ -25,6 +26,10 @@ export class PetsComponent implements OnInit {
       console.log('Response: ', response);
       this.pets = response;
       this.allPets = this.pets;
+      this.backup = this.pets;
+      if(this.pets.length >= 6){
+        this.pets = this.pets.slice(0,6);
+      }
     })
   }
   moreInfo(idPet: any){
@@ -104,6 +109,8 @@ export class PetsComponent implements OnInit {
     });
     if(updatedPets.length>0){
       this.pets = updatedPets;
+      this.backup = updatedPets;
+      // this.pets = this.pets.slice(0,6);
       this.isPetsEmpty = false;
     } else {
       this.isPetsEmpty = true;
@@ -111,5 +118,12 @@ export class PetsComponent implements OnInit {
     }
   }
 
-
+  onPaginateChange(event: any){ 
+    let inicio = event.pageIndex == 0 ? event.pageIndex: event.pageIndex +  event.pageSize;
+    let fin = event.pageIndex == 0 ?  event.pageSize : this.allPets.length;
+    console.log(inicio, fin);
+    console.log(this.pets);
+    this.pets = this.backup;
+    this.pets = this.pets.slice(inicio, fin);
+  }
 }
