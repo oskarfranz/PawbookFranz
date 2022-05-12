@@ -61,11 +61,11 @@ export class GoogleAuthService {
     this.oAuthService.loadDiscoveryDocument().then( () => {
       this.oAuthService.tryLoginImplicitFlow().then( () => {
         if(this.oAuthService.hasValidAccessToken()){
-          console.log('Valid token');
+          console.log('Logged with Google');
           this.oAuthService.loadUserProfile().then( (profile) => {
 
             this.user = JSON.parse(JSON.stringify(profile));
-            console.log(this.user)  
+            // console.log(this.user)  
             //PARSE user profile to form
             this.form.value.email = this.user.info.email;
             this.form.value.name = this.user.info.given_name;
@@ -81,7 +81,7 @@ export class GoogleAuthService {
             if(this.users.find((user: any) => user.email === this.form.value.email)){
               console.log('User already registered'); //si el email ya esta dado de alta
             } else{
-              console.log(this.users)
+              // console.log(this.users)
               console.log('User not registered')
               this.registerService.registerUser(this.form.value).subscribe(response => {
                 console.log(response);
@@ -108,8 +108,6 @@ export class GoogleAuthService {
   login() {
     this.oAuthService.initLoginFlow();
   }
-
-
 
   getProfile() {
     this.getPrevLogin();

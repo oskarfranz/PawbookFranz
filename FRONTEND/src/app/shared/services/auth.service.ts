@@ -5,6 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
+  isGoogleLogged (){
+    if(localStorage.getItem('reload') === 'false') return true;
+    else return false;
+  }
+
   constructor() { }
 
   save(token: string, email: string, role: number){
@@ -36,5 +41,6 @@ export class AuthService {
     localStorage.removeItem('google-token');
     localStorage.removeItem('role');
     localStorage.removeItem('userEmail');//cerramos sesion
+    localStorage.removeItem('reload');
   }
 }

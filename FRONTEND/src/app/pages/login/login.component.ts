@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
 
       let user = this.users.find((user: any) => user.email === this.credentials.email)
       console.log(user);
-
+      localStorage.setItem('reload', 'true');
       this.authService.save(response, this.credentials.email, user.role),
       this.router.navigate(['/home']);
     }, (error) => {
@@ -80,6 +80,7 @@ export class LoginComponent implements OnInit {
   }
 
   googleLogin() {
+    localStorage.setItem('reload', 'true');
     this.googleAuth.login();
   }
 

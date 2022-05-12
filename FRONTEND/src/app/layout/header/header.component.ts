@@ -12,7 +12,7 @@ import { GoogleAuthService } from 'src/app/shared/services/google-auth.service';
 export class HeaderComponent implements OnInit {
   
   isLogged: boolean = false;
-  role: boolean = (localStorage.getItem('role') === '0')? true : (localStorage.getItem('role') === '1')? true : false;
+  role: boolean = (localStorage.getItem('role') === '0')? true : (localStorage.getItem('role') === '1')? false : false;
   
   constructor(private authService: AuthService, private router: Router, private readonly googleAuth: GoogleAuthService) {
   }
@@ -23,8 +23,8 @@ export class HeaderComponent implements OnInit {
 
   
   isLoggedIn(){
+    this.isLogged = this.authService.isLoggedIn();
     // while(true){
-     this.isLogged = this.authService.isLoggedIn();
     // }
   }
 

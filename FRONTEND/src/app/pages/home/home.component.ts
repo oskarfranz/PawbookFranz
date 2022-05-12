@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ChildActivationStart, Router } from '@angular/router';
 import { GoogleAuthService } from 'src/app/shared/services/google-auth.service';
 
 
@@ -16,7 +16,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.googleAuth.getProfile();
+    console.log(localStorage.length)
+    if(localStorage.getItem('reload')  === 'true'){
+      localStorage.setItem('reload', 'false');
+      window.location.reload();
+    }
   }
+
 
   mascotas(){
     this.router.navigate(['/pets']);
