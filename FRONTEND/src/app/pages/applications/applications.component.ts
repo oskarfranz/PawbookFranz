@@ -13,6 +13,8 @@ import { ModalComponent } from '../modal/modal.component';
 export class ApplicationsComponent implements OnInit {
   pets: Pet[] = [];
   visiblePets: Pet[] = [];
+  role: boolean = (localStorage.getItem('role') === '0')? true : false;
+
 
   constructor(private router: Router, private petService: PetService, private dialog: MatDialog) { }
 
@@ -26,10 +28,15 @@ export class ApplicationsComponent implements OnInit {
 
   updateVisiblePets(allPets: Pet[]){
     let visblePets: Pet[] = [];
+    let rol = this.role
     this.pets.forEach(function(pet, index, array) {
-      if(localStorage.getItem('userEmail') === pet.rescuer){
-        // console.log(pet);
-        visblePets.push(pet);
+      if(!rol){
+        if(localStorage.getItem('userEmail') === pet.rescuer){
+          // console.log(pet);
+          visblePets.push(pet);
+        }
+      } else {
+        visblePets = allPets;
       }
     });
     return visblePets;

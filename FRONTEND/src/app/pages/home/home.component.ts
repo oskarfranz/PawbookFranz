@@ -12,7 +12,6 @@ export class HomeComponent implements OnInit {
 
   role: boolean = (localStorage.getItem('role') === '0')? true : (localStorage.getItem('role') === '1')? true : false;
 
-
   constructor(private router: Router, private readonly googleAuth: GoogleAuthService) { }
 
   ngOnInit(): void {

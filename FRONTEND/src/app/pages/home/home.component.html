@@ -31,7 +31,7 @@
                 <hr>
                 <p><br>Ver catalogo de mascotas disponibles en adopción</p>
             </div>
-            <div class="gallery3" (click)="adopcion()">
+            <div *ngIf="role"class="gallery3" (click)="adopcion()">
                 <!-- <img src="https://cdn-icons-png.flaticon.com/512/4044/4044381.png" class="imgGallery"> -->
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/White-cross-icon.svg/1200px-White-cross-icon.svg.png" class="imgGallery">
                 <h3>Adopción</h3>
