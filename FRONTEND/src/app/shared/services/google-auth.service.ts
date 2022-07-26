@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 const oAuthConfig: AuthConfig = {
   issuer: 'https://accounts.google.com',
   strictDiscoveryDocumentValidation: false,
-  redirectUri: 'http://localhost:4200/home',
+  redirectUri: 'https://pawbook-ui.herokuapp.com/home',
   clientId: '539745089995-lui95he53kvrarc5jbv42kn04lp7sqq9.apps.googleusercontent.com',
   scope: 'openid profile email'
 }

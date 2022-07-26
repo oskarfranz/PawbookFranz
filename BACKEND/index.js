@@ -81,7 +81,7 @@ Database.connect().then((client) =>{
 
     const io = socketIo(server, {
         cors: {
-            origin: 'http://localhost:4200',
+            origin: 'https://pawbook-ui.herokuapp.com',
             methods: ['GET', 'POST', 'PUT', 'DELETE'],
             allowHeaders: ['*'],
             credentials: true
